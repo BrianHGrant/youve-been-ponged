@@ -10,10 +10,8 @@ var pingedPonged = function(number) {
   }
   else {
     var pingedArray = pingFunction(number);
-    alert(pingedArray);
-
+    var pongedArray = pongFunction(number);
   };
-
 };
 
 // VALIDATION CHECK FUNCTION
@@ -39,6 +37,19 @@ var pingFunction = function(number) {
   return pingArray;
 };
 
+// DIVISIBLE BY 5 FUNCTION
+var pongFunction = function(number) {
+  var pongArray = [];
+  for (i=1; i<=number; i++) {
+    if (i % 5 != 0) {
+      pongArray.push(i);
+    }
+    else {
+      pongArray.push("pong");
+    }
+  };
+  return pongArray;
+};
 
 
 
