@@ -1,6 +1,5 @@
 // BUSINESS LOGIC
 
-
 // MAIN PROGRAM HANDLER
 var pingedPonged = function(number) {
   var isValid = validPositiveNumber(number);
@@ -9,8 +8,8 @@ var pingedPonged = function(number) {
     alert(errorMsg);
   }
   else {
-    var pingedArray = pingFunction(number);
-    var pongedArray = pongFunction(number);
+    var pingedPongedArray = pingPong(pingFunction(number), pongFunction(number));
+    alert(pingedPongedArray);
   };
 };
 
@@ -51,6 +50,22 @@ var pongFunction = function(number) {
   return pongArray;
 };
 
+// MERGE 2 ARRAYS FUNCTION
+var pingPong = function(inArray1, inArray2) {
+  var finalArray = [];
+  for (i=0; i<inArray1.length; i++) {
+    if (inArray1[i]===inArray2[i]) {
+      finalArray.push(inArray1[i]);
+    } else if (parseInt(inArray1[i].toString())) {
+      finalArray.push(inArray2[i]);
+    } else if (parseInt(inArray2[i].toString())) {
+      finalArray.push(inArray1[i]);
+    } else {
+      finalArray.push(inArray1[i] + inArray2[i]);
+    };
+  };
+  return finalArray;
+};
 
 
 
