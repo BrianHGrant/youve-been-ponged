@@ -5,11 +5,11 @@ var pingedPonged = function(number) {
   var isValid = validPositiveNumber(number);
   if (!isValid) {
     var errorMsg = 'Input is not valid. Please enter a postive integer.';
-    alert(errorMsg);
+    return errorMsg;
   }
   else {
     var pingedPongedArray = pingPong(pingFunction(number), pongFunction(number));
-    alert(pingedPongedArray);
+    return pingedPongedArray;
   };
 };
 
@@ -72,9 +72,14 @@ var pingPong = function(inArray1, inArray2) {
 // USER INTERFACE
 $(document).ready(function() {
   $('#userInput').submit(function(event) {
+    $('#resultList ul').html("");
     var inNumberInt = parseInt($('input#inNumber').val());
-    var result = pingedPonged(inNumberInt);
-
+    var results = pingedPonged(inNumberInt);
+    var htmlOutput = "";
+    results.map(function(result) {
+      $('#resultList ul').append('<li>'+result+'</li>');
+    });
     event.preventDefault();
   });
+
 });
