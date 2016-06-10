@@ -38,7 +38,7 @@ var pingPong = function(number) {
 // CALCULATE SCORE FUNCTION
 var pingPongGame = function(pings, pingsGuess, pongs, pongsGuess, pingPongs, pingPongsGuess) {
   var wins = 0;
-  var ifWonStatus = "";
+  ifWonStatus = "";
   if (pingsGuess === pings) {
     wins ++;
   };
@@ -50,10 +50,11 @@ var pingPongGame = function(pings, pingsGuess, pongs, pongsGuess, pingPongs, pin
   };
   if (wins >= 2) {
     ifWonStatus = "winner!"
+    return true;
   } else {
     ifWonStatus = "loser!"
+    return false;
   };
-  return ifWonStatus
 };
 
 // USER INTERFACE
@@ -92,7 +93,22 @@ $(document).ready(function() {
       var winner = pingPongGame(pingCounter, pingGuess, pongCounter, pongGuess, pingPongCounter, pingPongGuess);
       $('#winnerStatus').removeClass('hide');
       $('.playerName').text(inName);
-      $('.ifWon').text(winner);
+      $('.ifWon').text(ifWonStatus);
+      if (winner) {
+        $('#winnerStatus').removeClass('loser');
+        $('#winnerStatus').addClass('winner');
+        $('#losingPic').addClass('hide');
+        $('#winningPic').removeClass('hide');
+      } else if (!winner) {
+        $('#winnerStatus').removeClass('winner');
+        $('#winnerStatus').addClass('loser');
+        $('#winningPic').addClass('hide');
+        $('#losingPic').removeClass('hide');
+      };
+      $('#instructionsButton').click(function(event) {
+        $('#instructions').removeClass('hide');
+        $('#resultList').addClass('hide');
+      });
     };
     event.preventDefault();
   });

@@ -1,3 +1,17 @@
+body {
+  background-color: #042037;
+  height: 100%;
+  margin: 0;
+}
+
+
+.container {
+  background-color: #718EA4;
+  border-style: ridge;
+  border-radius: 2%;
+  margin-top: 0.4em;
+}
+
 .hide {
   display: none;
 }
@@ -15,15 +29,25 @@
   margin-top: 0.4em;
 }
 
+.header h1 {
+  font-family: 'Dosis', sans-serif;
+  font-weight: bold;
+  text-align: center;
+  color: #153959;
+}
+
 .jumbotron {
   border-style: ridge;
   border-radius: 2%;
+  background-color: #FFE064;
 }
 
-.container {
-  background-color: yellow;
-  border-style: ridge;
-  border-radius: 2%;
+#instructions {
+  color: #153959;
+}
+
+#instructions h2 {
+  font-family: 'Dosis', sans-serif;
 }
 
 #resultList {
@@ -37,4 +61,24 @@
 .help-block {
   color: red;
   font-weight: bold;
+}
+
+#instructionsButton {
+  margin: 0.4em;
+}
+
+.winner {
+  background-color: #7BCC33;
+}
+
+#winningPic {
+  padding: 0.1em;
+}
+
+.loser {
+  background-color: #C61515;
+}
+
+#losingPic {
+  padding: 0.1em;
 }
