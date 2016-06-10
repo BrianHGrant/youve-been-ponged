@@ -86,6 +86,7 @@ _User will enter in their name, a number, and their guesses for how many numbers
 * _It will display winner or looser text and image depending on outcome of correct guess on 2 of 3:
   * Example Input: 2 wins   Example Output: true
   * Example Input: 1 win   Example Output: false_
+  
 ## Setup/Installation Requirements
 
 * _Open page in web browser_
