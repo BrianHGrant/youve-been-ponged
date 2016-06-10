@@ -9,24 +9,61 @@
   </head>
   <body>
     <div class="container">
-      <div id="header">
+      <div class="jumbotron header">
         <h1>You've Been Ponged!</h1>
       </div>
-
-      <form id="userInput">
-        <div class="form-group">
-          <label for="inNumber">Enter number to be Pinged and Ponged:</label>
-          <input type="text" name="inNumber" id="inNumber">
+      <div class="row">
+        <div class="col-xs-6">
+          <div class = "jumbotron" id="instructions">
+              <h2>How to play:</h2>
+            <ol>
+              <li>Enter your name and your desired number.</li>
+              <li>For Pings, guess how many numbers divisble by 3 but not 5 are between 1 and your number (includes both 1 and your number).</li>
+              <li>For Pongs, guess how many numbers divisble by 5 but not 3 are between 1 and your number (includes both 1 and your number).</li>
+              <li>For PingPongs, guess how many numbers divisble by 3 and 5 are between 1 and your number (includes both 1 and your number).</li>
+              <li>Hit Green button to play.</li>
+            </ol>
+          </div>
+          <div class="hide" id="resultList">
+            <h2>Results:</h2>
+            <ul>
+            </ul>
+          </div>
         </div>
-        <button type="submit" class="btn btn-success" id="submitButton">Show me!</button>
-      </form>
-      <div id="resultList">
-        <ul>
-
-        </ul>
+        <div class="col-xs-offset-1 col-xs-5">
+          <div class="row inputForm">
+            <form id="userInput">
+              <div class="form-group pull-right">
+                <label for="inName">Enter Your name:</label>
+                <input type="text" name="inName" id="inName">
+              </div>
+              <div class="form-group pull-right">
+                <label for="inNumber">Enter a number:</label>
+                <input type="text" name="inNumber" id="inNumber">
+              </div>
+              <div class="form-group pull-right">
+                <label for="inPing">Enter guess for Pings:</label>
+                <input type="text" name="inPing" id="inPing">
+              </div>
+              <div class="form-group pull-right">
+                <label for="inPong">Enter guess for Pongs:</label>
+                <input type="text" name="inPong" id="inPong">
+              </div>
+              <div class="form-group pull-right">
+                <label for="inPingPong">Enter guess for PingPongs:</label>
+                <input type="text" name="inPingPong" id="inPingPong">
+              </div>
+              <button type="submit" class="btn btn-success pull-right" id="submitButton">Show me!</button>
+            </form>
+          </div>
+          <div class="row inputForm hide" id="winnerStatus">
+            <h3><span class="playerName"></span>, you are a <span class="ifWon"></span></h3>
+          </div>
+        </div>
 
 
       </div>
+
 
     </div>
   </body>

@@ -1,0 +1,33 @@
+.hide {
+  display: none;
+}
+
+.inputForm {
+  padding: 0.4em;
+  margin: 0.2em;
+  background-color: red;
+  border-style: ridge;
+  border-radius: 2%;
+
+}
+
+.header {
+  margin-top: 0.4em;
+}
+
+.jumbotron {
+  border-style: ridge;
+  border-radius: 2%;
+}
+
+.container {
+  background-color: yellow;
+  border-style: ridge;
+  border-radius: 2%;
+}
+
+#resultList {
+  background-color: pink;
+  border-style: ridge;
+  border-radius: 2%;
+}
