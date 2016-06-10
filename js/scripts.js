@@ -1,26 +1,11 @@
 // BUSINESS LOGIC
 
-// MAIN PROGRAM HANDLER
-var pingedPonged = function(number) {
-  var isValid = validPositiveNumber(number);
-  if (!isValid) {
-    var errorMsg = 'Input is not valid. Please enter a postive integer.';
-    var pingedPongedArray =[];
-    pingedPongedArray.push(errorMsg);
-    return pingedPongedArray;
-  }
-  else {
-    var pingedPongedArray = pingPong(number);
-    return pingedPongedArray;
-  };
-};
-
-// VALIDATION CHECK FUNCTION
+// VALID POSTIVE NUMBER FUNCTION
 var validPositiveNumber = function(number) {
-  if (!number || number <= 0) {
-    return false;
-  } else {
+  if (number > 0) {
     return true;
+  } else {
+    return false;
   };
 };
 
@@ -50,9 +35,10 @@ var pingPong = function(number) {
   return pingPongArray;
 };
 
+// CALCULATE SCORE FUNCTION
 var pingPongGame = function(pings, pingsGuess, pongs, pongsGuess, pingPongs, pingPongsGuess) {
   var wins = 0;
-  ifWonStatus = "";
+  var ifWonStatus = "";
   if (pingsGuess === pings) {
     wins ++;
   };
@@ -67,31 +53,47 @@ var pingPongGame = function(pings, pingsGuess, pongs, pongsGuess, pingPongs, pin
   } else {
     ifWonStatus = "loser!"
   };
+  return ifWonStatus
 };
 
 // USER INTERFACE
 $(document).ready(function() {
   $('#userInput').submit(function(event) {
+    $('.help-block').addClass('hide')
     $('#resultList ul').html("");
     var inNumberInt = parseInt($('input#inNumber').val());
     var inName = $('input#inName').val();
     var pingGuess = parseInt($('input#inPing').val());
     var pongGuess = parseInt($('input#inPong').val());
     var pingPongGuess = parseInt($('input#inPingPong').val());
-    var htmlOutput = "";
-
-    var results = pingedPonged(inNumberInt);
-    results.map(function(result) {
-      $('#resultList ul').append('<li>'+result+'</li>');
-      event.preventDefault();
-    });
-    $('#instructions').addClass('hide');
-    $('#resultList').removeClass('hide');
-    var winner = pingPongGame(pingCounter, pingGuess, pongCounter, pongGuess, pingPongCounter, pingPongGuess);
-    alert(winner);
-    $('#winnerStatus').removeClass('hide');
-    $('.playerName').text(inName);
-    $('.ifWon').text(ifWonStatus);
+    // RUNS VALIDATION AND DISPLAYS ERRORS TO USER
+    if(!inName) {
+      $('#nameHelpBlock').removeClass('hide');
+    } else if (!validPositiveNumber(inNumberInt)) {
+      $('#numberHelpBlock').removeClass('hide');
+    } else if (!validPositiveNumber(pingGuess)) {
+      $('#numberHelpBlock1').removeClass('hide');
+    } else if (!validPositiveNumber(pongGuess)) {
+      $('#numberHelpBlock2').removeClass('hide');
+    } else if (!validPositiveNumber(pingPongGuess)) {
+      $('#numberHelpBlock3').removeClass('hide');
+    } else {
+      // INPUTS RESULTING ARRAY INTO ORDERED LIST
+      var htmlOutput = "";
+      var results = pingPong(inNumberInt);
+      results.map(function(result) {
+        $('#resultList ul').append('<li>'+result+'</li>');
+        event.preventDefault();
+      });
+      // INSTRUCTIONS/RESULTS SHOW/HIDE BLOCK
+      $('#instructions').addClass('hide');
+      $('#resultList').removeClass('hide');
+      // WINNING STATUS BLOCK
+      var winner = pingPongGame(pingCounter, pingGuess, pongCounter, pongGuess, pingPongCounter, pingPongGuess);
+      $('#winnerStatus').removeClass('hide');
+      $('.playerName').text(inName);
+      $('.ifWon').text(winner);
+    };
     event.preventDefault();
   });
 

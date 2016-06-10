@@ -33,25 +33,30 @@
         <div class="col-xs-offset-1 col-xs-5">
           <div class="row inputForm">
             <form id="userInput">
-              <div class="form-group pull-right">
+              <div class="form-group pull-right" id="inputName">
                 <label for="inName">Enter Your name:</label>
                 <input type="text" name="inName" id="inName">
+                <span id="nameHelpBlock" class="help-block hide">Enter a name!</span>
               </div>
-              <div class="form-group pull-right">
+              <div class="form-group pull-right" id="inputNumber">
                 <label for="inNumber">Enter a number:</label>
                 <input type="text" name="inNumber" id="inNumber">
+                <span id="numberHelpBlock" class="help-block hide">Enter a valid positive integer!</span>
               </div>
-              <div class="form-group pull-right">
+              <div class="form-group pull-right" id="inputPing">
                 <label for="inPing">Enter guess for Pings:</label>
                 <input type="text" name="inPing" id="inPing">
+                <span id="numberHelpBlock1" class="help-block hide">Enter a valid positive integer!</span>
               </div>
-              <div class="form-group pull-right">
+              <div class="form-group pull-right" id="inputPong">
                 <label for="inPong">Enter guess for Pongs:</label>
                 <input type="text" name="inPong" id="inPong">
+                <span id="numberHelpBlock2" class="help-block hide">Enter a valid positive integer!</span>
               </div>
-              <div class="form-group pull-right">
+              <div class="form-group pull-right" id="inputPingPong">
                 <label for="inPingPong">Enter guess for PingPongs:</label>
                 <input type="text" name="inPingPong" id="inPingPong">
+                <span id="numberHelpBlock3" class="help-block hide">Enter a valid positive integer!</span>
               </div>
               <button type="submit" class="btn btn-success pull-right" id="submitButton">Show me!</button>
             </form>

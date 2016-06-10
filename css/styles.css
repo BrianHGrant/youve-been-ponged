@@ -5,7 +5,7 @@
 .inputForm {
   padding: 0.4em;
   margin: 0.2em;
-  background-color: red;
+  background-color: lightblue;
   border-style: ridge;
   border-radius: 2%;
 
@@ -30,4 +30,11 @@
   background-color: pink;
   border-style: ridge;
   border-radius: 2%;
+  margin-bottom: 0.4em;
+  padding-left: 0.4em;
+}
+
+.help-block {
+  color: red;
+  font-weight: bold;
 }
