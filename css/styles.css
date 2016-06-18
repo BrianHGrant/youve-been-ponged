@@ -2,11 +2,18 @@ body {
   background-color: #042037;
   height: 100%;
   margin: 0;
+  background-image: url(../img/pingPongBalls.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 
 .container {
-  background-color: #718EA4;
+  /*background-color: #718EA4;*/
+  background-image: url(../img/neonTable2.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  /*background: 30%;*/
   border-style: ridge;
   border-radius: 2%;
   margin-top: 0.4em;
@@ -19,31 +26,39 @@ body {
 .inputForm {
   padding: 0.4em;
   margin: 0.2em;
-  background-color: lightblue;
+  background-color: orange;
   border-style: ridge;
   border-radius: 2%;
+}
 
+.inputForm label {
+  color: blue;
 }
 
 .header {
   margin-top: 0.4em;
+  /*background-image: url(../img/pingPongBalls.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;*/
 }
 
 .header h1 {
   font-family: 'Dosis', sans-serif;
   font-weight: bold;
   text-align: center;
-  color: #153959;
+  color: blue;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+  font-size: 5em;
 }
 
 .jumbotron {
   border-style: ridge;
   border-radius: 2%;
-  background-color: #FFE064;
+  background-color: orange;
 }
 
 #instructions {
-  color: #153959;
+  color: blue;
 }
 
 #instructions h2 {
@@ -51,7 +66,7 @@ body {
 }
 
 #resultList {
-  background-color: pink;
+  background-color: lavender;
   border-style: ridge;
   border-radius: 2%;
   margin-bottom: 0.4em;

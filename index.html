@@ -19,9 +19,9 @@
               <h2>How to play:</h2>
             <ol>
               <li>Enter your name and your desired number.</li>
-              <li>For Pings, guess how many numbers divisble by 3 but not 5 are between 1 and your number (includes both 1 and your number).</li>
-              <li>For Pongs, guess how many numbers divisble by 5 but not 3 are between 1 and your number (includes both 1 and your number).</li>
-              <li>For PingPongs, guess how many numbers divisble by 3 and 5 are between 1 and your number (includes both 1 and your number).</li>
+              <li>For every number from 1 to your number count 1 Ping if it is divisible by 3 but not by 5.</li>
+              <li>For every number from 1 to your number count 1 Pong if it is divisible by 5 but not by 3.</li>
+              <li>For every number from 1 to your number count 1 PingPong if it is divisible by both 3 and 5.</li>
               <li>Hit Green button to play.</li>
             </ol>
           </div>
@@ -64,12 +64,21 @@
             </form>
           </div>
           <div class="row inputForm hide" id="winnerStatus">
-            <h3><span class="playerName"></span>, you are a <span class="ifWon"></span></h3>
-            <div class = "hide" id="winningPic">
-              <img class="thumbnail img-responsive" src="img/catspingpong.gif" alt="cat playing pingpong">
+            <div class="col-sm-8">
+              <h3><span class="playerName"></span>, you are a <span class="ifWon"></span></h3>
+              <div class = "hide" id="winningPic">
+                <img class="thumbnail img-responsive" src="img/catspingpong.gif" alt="cat playing pingpong">
+              </div>
+              <div class = "hide" id="losingPic">
+                <img class="thumbnail img-responsive" src="img/willferrellpong.jpg" alt="will ferrell playing pingpong">
+              </div>
             </div>
-            <div class = "hide" id="losingPic">
-              <img class="thumbnail img-responsive" src="img/willferrellpong.jpg" alt="will ferrell playing pingpong">
+            <div class="col-sm-2">
+              <h4>Stats</h4>
+              <p>Pings: <span id="pings-stats"></span></p>
+              <p>Pongs: <span id="pongs-stats"></span></p>
+              <p>PingPongs: <span id="pingpongs-stats"></span></p>
+              <p>You Won: <span id="won-stats"></span> Games!</p>
             </div>
           </div>
         </div>

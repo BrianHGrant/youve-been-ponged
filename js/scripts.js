@@ -1,6 +1,15 @@
 // BUSINESS LOGIC
 
-// VALID POSTIVE NUMBER FUNCTION
+// VALID NUMBER FUNCTION
+
+var validNumber = function(number) {
+  if (number >= 0) {
+    return true;
+  } else {
+    return false;
+  };
+};
+
 var validPositiveNumber = function(number) {
   if (number > 0) {
     return true;
@@ -37,7 +46,7 @@ var pingPong = function(number) {
 
 // CALCULATE SCORE FUNCTION
 var pingPongGame = function(pings, pingsGuess, pongs, pongsGuess, pingPongs, pingPongsGuess) {
-  var wins = 0;
+  wins = 0;
   ifWonStatus = "";
   if (pingsGuess === pings) {
     wins ++;
@@ -72,11 +81,11 @@ $(document).ready(function() {
       $('#nameHelpBlock').removeClass('hide');
     } else if (!validPositiveNumber(inNumberInt)) {
       $('#numberHelpBlock').removeClass('hide');
-    } else if (!validPositiveNumber(pingGuess)) {
+    } else if (!validNumber(pingGuess)) {
       $('#numberHelpBlock1').removeClass('hide');
-    } else if (!validPositiveNumber(pongGuess)) {
+    } else if (!validNumber(pongGuess)) {
       $('#numberHelpBlock2').removeClass('hide');
-    } else if (!validPositiveNumber(pingPongGuess)) {
+    } else if (!validNumber(pingPongGuess)) {
       $('#numberHelpBlock3').removeClass('hide');
     } else {
       // INPUTS RESULTING ARRAY INTO ORDERED LIST
@@ -104,7 +113,10 @@ $(document).ready(function() {
         $('#winnerStatus').addClass('loser');
         $('#winningPic').addClass('hide');
         $('#losingPic').removeClass('hide');
-      };
+      };$("#pings-stats").text(pingCounter);
+      $("#pongs-stats").text(pongCounter);
+      $("#pingpongs-stats").text(pingPongCounter);
+      $("#won-stats").text(wins);
       $('#instructionsButton').click(function(event) {
         $('#instructions').removeClass('hide');
         $('#resultList').addClass('hide');
